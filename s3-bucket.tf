@@ -1,5 +1,6 @@
 module "s3_bucket" {
-  source = "datashegz/terraform-aws-s3-bucket"
+  source  = "app.terraform.io/HarshiCorpWorkShop/s3-bucket/aws"
+  version = "2.8.0"
 
   bucket = "my-s3-bucket"
   bucket_prefix = "Segun"
@@ -7,6 +8,11 @@ module "s3_bucket" {
 
   versioning = {
     enabled = true
+  }
+
+  tags = {
+    Department = "devops",
+    Billable   = "true"
   }
 
 }
